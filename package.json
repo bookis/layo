@@ -1,0 +1,21 @@
+{
+  "name": "layo",
+  "version": "1.0.0",
+  "description": "A simple tool to insert HTML views within a layout",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/bookis/layo.git"
+  },
+  "author": "Bookis Worthy",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bookis/layo/issues"
+  },
+  "homepage": "https://github.com/bookis/layo#readme"
+}
