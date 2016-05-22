@@ -2,15 +2,25 @@
   "name": "layo",
   "version": "1.0.0",
   "description": "A simple tool to insert HTML views within a layout",
-  "main": "index.js",
+  "main": "layo.js",
   "dependencies": {},
-  "devDependencies": {},
+  "devDependencies": {
+    "babel-cli": "^6.9.0",
+    "babel-jest": "^12.1.0",
+    "babel-preset-es2015": "^6.9.0",
+    "chokidar": "^1.5.1",
+    "jest-cli": "^12.1.0"
+  },
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "start": "babel src --out-file layo.js -w"
   },
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com/bookis/layo.git"
+  },
+  "bin": {
+    "layo": "executable.js"
   },
   "author": "Bookis Worthy",
   "license": "MIT",
