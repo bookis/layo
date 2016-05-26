@@ -1,14 +1,15 @@
 {
   "name": "layo",
-  "version": "1.0.0",
+  "version": "0.0.2",
   "description": "A simple tool to insert HTML views within a layout",
   "main": "layo.js",
-  "dependencies": {},
+  "dependencies": {
+    "chokidar": "^1.5.1"
+  },
   "devDependencies": {
     "babel-cli": "^6.9.0",
     "babel-jest": "^12.1.0",
     "babel-preset-es2015": "^6.9.0",
-    "chokidar": "^1.5.1",
     "jest-cli": "^12.1.0"
   },
   "scripts": {
