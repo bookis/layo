@@ -4,24 +4,31 @@
 var Layo     = require('./layo'),
  chokidar    = require('chokidar'),
  fs          = require('fs'),
- userArgs    = process.argv.slice(2);
+ userArgs    = process.argv.slice(2),
+ src         = (userArgs[0] + "/").replace(/\{2,}/g, '/'),
+ dest        = (userArgs[1] + "/").replace(/\{2,}/g, '/');
+
+ if (!userArgs[0] || !userArgs[1]) {
+   console.log("  USAGE: layo [source directory] [destination directory]");
+   return false;
+ }
 
 var writeFile = function(path) {
   if (path.match(/layout/)) return;
-  new Layo(userArgs[0] + "/layout.html", path).render()
+  new Layo(src + "/layout.html", path).render()
     .then((file) => {
-      var newFile = userArgs[1] +  path.split("/").pop();
+      var newFile = dest +  path.split("/").pop();
       fs.writeFile(newFile, file);
       console.log("Wrote to " + newFile);
     });
 };
 
-chokidar.watch(userArgs[0], {ignored: /swp/}).on('change', (path) => {
+chokidar.watch(src, {ignored: /swp/}).on('change', (path) => {
   if (path.match(/layout/)) {
-    fs.readdir(userArgs[0], function(err, files) {
+    fs.readdir(src, function(err, files) {
       var i;
       files.forEach(function(file) {
-        writeFile(userArgs[0] + file);
+        writeFile(src + file);
       });
     });
   } else {
