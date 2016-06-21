@@ -21,7 +21,7 @@
     "url": "git+ssh://git@github.com/bookis/layo.git"
   },
   "bin": {
-    "layo": "executable.js"
+    "layo": "./bin/executable.js"
   },
   "author": "Bookis Worthy",
   "license": "MIT",
